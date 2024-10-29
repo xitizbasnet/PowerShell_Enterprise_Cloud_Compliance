@@ -9,9 +9,6 @@ Patch Information
 
 Get-Hotfix
 
-
-
-
 Patch-Velocity
 
 Counts the number of patches applied per day
@@ -25,7 +22,7 @@ Patch-Age
 Patch age of a system is the number of days since the last patch was applied:
 
 
-$lastPatchDate = (Get-HotFix | Sort-Object InstalledOn -Descending |
+$lastPatchDate = (Get-HotFix | Sort-Object InstalledOn -Descending | 
 
 Select-Object -First 1).InstalledOn
 
@@ -40,26 +37,39 @@ $lastPatchDate
 **
 
 Check that the Administrator account is disabled:
+
 Get-LocalUser -Name Administrator
 
 Check that the Guest account is disabled:
+
 Get-LocalUser -Name Guest
 
 Save the list of local users to a variable and then test to see if both Guest and
+
 Administrator are disabled:
+
 $disabledUsers = Get-LocalUser | Where-Object Enabled -eq $False
+
 ($disabledUsers.Name -contains 'Administrator') -And
+
 ($disabledUsers.Name -contains 'Guest')
 
 Enumerate the members of local groups:
+
 (Get-LocalGroupMember -Name Administrators | Measure-
+
 Object).Count
 
 (Get-LocalGroupMember -Name 'Power Users').Count
+
 Check that a Windows services is installed, enabled and running:
+
 ((Get-Service -Name '<service name>').Count -ge 1 ) -And
+
 ((Get-Service -Name '<service name>').Status -eq 'running') -And
+
 ((Get-Service -Name '<service name>').StartType -like 'Automatic*')
+
 
 *****************************
 **Patch Compliance on Debian-based Linux
@@ -67,28 +77,45 @@ Distributions
 **
 
 *Change shell to Powershell Core*
+
 Pwsh
 
 Patches installed by the Apt package manager are logged in:
+
 /var/log/dkpg.log
 
 Patch-Velocity
+
 Counts the number of patches applied per day
+
 Get-Content /var/log/dpkg.log* | Select-String “ install “ -NoEmphasis
+
 Get-Content /var/log/dpkg.log* |
+
 Select-String " install " -NoEmphasis |
+
 Out-File ./patches.txt -Encoding ascii
+
 $lines = Get-Content ./patches.txt
+
 ($lines | Where-Object { $_ -match "^[0-9]" }) -replace " .*$"
 
 Patch-Age
+
 Patch age of a system is the number of days since the last patch was applied:
+
 $lastPatchDate = ($lines |
+
 Where-Object { $_ -match "^[0-9]" }) -replace " .*$" |
+
 Select-Object -last 1
+
 $patchAge = (New-TimeSpan -Start (Get-Date -date $lastPatchDate) `
+
 -End (Get-Date)).TotalDays
+
 "Last Patch Date: $lastPatchDate"
+
 "Patch Age: $patchAge"
 
 
@@ -97,14 +124,19 @@ $patchAge = (New-TimeSpan -Start (Get-Date -date $lastPatchDate) `
 **
 
 Make sure current version AWS PowerShell module is available for use.
+
 Install-Module -name AWSPowerShell.NetCore -Scope CurrentUser -
+
 Force
 
 Load AWS Module
+
 Import-Module AWSPowerShell.NetCore
 
 Authenticate to AWS
+
 Set-AWSCredential -StoreAs <name of profile> -AccessKey
+
 YourAccessKeyHere -SecretKey YourSecretKeyHere
 
 CIS AWS Benchmark Control 1.4
