@@ -2,6 +2,9 @@
 PowerShell_Enterprise_Cloud_Compliance
 
 *****************************
+![image](https://github.com/user-attachments/assets/73e13aae-056f-4414-baec-b37f01f9941a)
+
+
 **Patch Compliance On Windows
 **
 
@@ -33,6 +36,10 @@ $lastPatchDate
 
 
 *****************************
+
+![image](https://github.com/user-attachments/assets/77c06f29-d2d1-44af-90ff-442d360e6746)
+
+
 **Windows Compliance Measurements
 **
 
@@ -72,6 +79,10 @@ Check that a Windows services is installed, enabled and running:
 
 
 *****************************
+
+![image](https://github.com/user-attachments/assets/57be5185-1c90-4102-847a-b8442795a177)
+
+
 **Patch Compliance on Debian-based Linux
 Distributions
 **
