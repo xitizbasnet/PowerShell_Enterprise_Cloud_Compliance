@@ -2,7 +2,7 @@
 PowerShell_Enterprise_Cloud_Compliance
 
 *****************************
-![image](https://github.com/user-attachments/assets/73e13aae-056f-4414-baec-b37f01f9941a)
+![image](https://github.com/user-attachments/assets/d681b9a3-7f50-4dc0-874c-eace52d49cc1)
 
 
 **Patch Compliance On Windows
