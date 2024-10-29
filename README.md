@@ -37,7 +37,7 @@ $lastPatchDate
 
 *****************************
 
-![image](https://github.com/user-attachments/assets/77c06f29-d2d1-44af-90ff-442d360e6746)
+![image](https://github.com/user-attachments/assets/e6c687c5-4991-41f2-a5e6-c69e6174eba2)
 
 
 **Windows Compliance Measurements
@@ -80,7 +80,7 @@ Check that a Windows services is installed, enabled and running:
 
 *****************************
 
-![image](https://github.com/user-attachments/assets/57be5185-1c90-4102-847a-b8442795a177)
+ ![image](https://github.com/user-attachments/assets/6c8d72a4-da85-450a-8426-0be8abaf9456)
 
 
 **Patch Compliance on Debian-based Linux
@@ -131,6 +131,10 @@ $patchAge = (New-TimeSpan -Start (Get-Date -date $lastPatchDate) `
 
 
 *****************************
+
+![image](https://github.com/user-attachments/assets/10c9ac99-ecfb-4ba3-9c2f-29828052c349)
+
+
 **AWS Compliance Measurements
 **
 
@@ -176,6 +180,10 @@ Get-CTTrail
 
 
 *****************************
+
+![image](https://github.com/user-attachments/assets/d338beea-244d-423b-adfb-fb2149e90645)
+
+
 **Measure VMWare host configuration
 **
 
@@ -215,6 +223,10 @@ Date)).TotalDays
 $patchAge
 
 *****************************
+
+![image](https://github.com/user-attachments/assets/38f721cc-4f22-4d27-b851-31ae3cf52d03)
+
+
 **Measure VMWare host configuration Scan Details
 **
 
