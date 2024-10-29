@@ -6,20 +6,31 @@ PowerShell_Enterprise_Cloud_Compliance
 **
 
 Patch Information
+
 Get-Hotfix
 
+
 Patch-Velocity
+
 Counts the number of patches applied per day
+
 
 Get-Hotfix | Sort-Object InstalledOn -Descending
 
+
 Patch-Age
+
 Patch age of a system is the number of days since the last patch was applied:
 
+
 $lastPatchDate = (Get-HotFix | Sort-Object InstalledOn -Descending |
+
 Select-Object -First 1).InstalledOn
+
 $lastPatchDate
+
 (New-TimeSpan -Start $lastPatchDate -End (Get-Date)).TotalDays
+
 
 
 *****************************
